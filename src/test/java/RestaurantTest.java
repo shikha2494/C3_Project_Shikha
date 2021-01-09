@@ -59,4 +59,11 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
+
+    //TDD Approach: Select Menu items with name as parameter and returning the value
+    @Test
+    public void when_items_been_selected_from_the_menu_list_then_total_order_value_should_be_returned() {
+        String[] itemSelect = {"French fries", "Vegetable lasagne"};
+        int totalOrderValue = restaurant.getOrderValue(itemSelect);
+    }
 }
