@@ -73,4 +73,17 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+
+    //TDD Approach: Implementation
+    public int getOrderValue(String[] itemSelect) {
+        int totalPriceValue = 0;
+        for(Item item: menu){
+            for(String name: itemSelect) {
+                if (item.getName().equals(name)) {
+                    totalPriceValue += item.getPrice();
+                }
+            }
+        }
+        return totalPriceValue;
+    }
 }

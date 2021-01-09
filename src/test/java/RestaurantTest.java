@@ -63,7 +63,12 @@ class RestaurantTest {
     //TDD Approach: Select Menu items with name as parameter and returning the value
     @Test
     public void when_items_been_selected_from_the_menu_list_then_total_order_value_should_be_returned() {
+        restaurant.addToMenu("French fries", 180);
         String[] itemSelect = {"French fries", "Vegetable lasagne"};
-        int totalOrderValue = restaurant.getOrderValue(itemSelect);
+        int totalOrderValue = 0;
+        assertEquals(0, totalOrderValue);
+        totalOrderValue = restaurant.getOrderValue(itemSelect);
+        assertNotNull(totalOrderValue);
+        assertEquals(449, totalOrderValue);
     }
 }
